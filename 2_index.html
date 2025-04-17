@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>臧礼斌的个人简历</title>
+    <!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: #f9f9f9;
+        }
+        .resume-container {
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        .resume-container:hover {
+            transform: translateY(-5px);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .header h1 {
+            font-size: 24px;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        .header h1:hover {
+            color: #2c82c9;
+            transform: scale(1.05);
+        }
+        .section {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .section:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+        .section-title {
+            background-color: #f0f0f0;
+            padding: 10px 15px;
+            font-weight: bold;
+            font-size: 16px;
+            border-bottom: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+        .section-title:hover {
+            background-color: #2c82c9;
+            color: white;
+            padding-left: 20px;
+        }
+        .section-title i {
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        .section-title:hover i {
+            transform: rotate(15deg) scale(1.2);
+        }
+        .section-content {
+            padding: 15px;
+        }
+        .info-row {
+            display: flex;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        .info-row:hover {
+            background-color: #f5f5f5;
+            transform: translateX(3px);
+        }
+        .info-row:last-child {
+            margin-bottom: 0;
+        }
+        .info-label {
+            width: 100px;
+            font-weight: bold;
+            padding-right: 10px;
+            color: #555;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        .info-label i {
+            margin-right: 8px;
+            width: 20px;
+            text-align: center;
+        }
+        .info-row:hover .info-label {
+            color: #2c82c9;
+        }
+        .info-value {
+            flex: 1;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        .info-value i {
+            margin-right: 8px;
+            color: #2c82c9;
+        }
+        .info-row:hover .info-value {
+            color: #333;
+            font-weight: bold;
+        }
+        .photo-container {
+            float: right;
+            width: 150px;
+            height: 180px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .photo-container:hover {
+            transform: rotate(5deg) scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .photo-container:hover::after {
+            content: "点击查看大图";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(44, 130, 201, 0.8);
+            color: white;
+            text-align: center;
+            padding: 5px;
+            font-size: 12px;
+        }
+        .photo {
+            max-width: 100%;
+            max-height: 100%;
+            transition: all 0.5s ease;
+        }
+        .photo-container:hover .photo {
+            transform: scale(1.1);
+        }
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .list-item {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        .list-item:hover {
+            transform: translateX(10px);
+            color: #2c82c9;
+        }
+        .list-item:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #555;
+            transition: all 0.3s ease;
+        }
+        .list-item:hover:before {
+            color: #2c82c9;
+            transform: scale(1.5);
+        }
+        .list-item i {
+            margin-right: 10px;
+            color: #2c82c9;
+            transition: all 0.3s ease;
+        }
+        .list-item:hover i {
+            transform: rotate(15deg) scale(1.2);
+        }
+        .two-column {
+            display: flex;
+        }
+        .column {
+            flex: 1;
+        }
+        /* 添加段落悬停效果 */
+        .section-content p {
+            transition: all 0.3s ease;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .section-content p:hover {
+            background-color: #f0f7ff;
+            transform: translateX(3px);
+        }
+        /* 添加按钮效果 */
+        .download-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px 15px;
+            background-color: #2c82c9;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .download-btn:hover {
+            background-color: #1a5a8a;
+            transform: translateY(-3px) rotate(2deg);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        .download-btn i {
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        .download-btn:hover i {
+            transform: translateX(3px);
+        }
+        /* 社交链接 */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            color: #555;
+            transition: all 0.3s ease;
+        }
+        .social-link:hover {
+            background-color: #2c82c9;
+            color: white;
+            transform: translateY(-5px) rotate(10deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="header">
+            <h1><i class="fas fa-user-tie"></i> 个人简历</h1>
+        </div>
+
+        <div class="clearfix">
+            <!-- 基本信息 -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-id-card"></i> 基本信息</div>
+                <div class="section-content clearfix">
+                    <div class="photo-container">
+                        <img src="webwxgetmsgimg.jpg" alt="个人照片" class="photo">
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-label"><i class="fas fa-signature"></i> 姓名</div>
+                        <div class="info-value">臧礼斌</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label"><i class="fas fa-venus-mars"></i> 性别</div>
+                        <div class="info-value">男</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label"><i class="fas fa-birthday-cake"></i> 年龄</div>
+                        <div class="info-value">20</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label"><i class="fas fa-map-marker-alt"></i> 籍贯</div>
+                        <div class="info-value">山东省烟台市</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label"><i class="fas fa-phone"></i> 联系电话</div>
+                        <div class="info-value"><i class="fas fa-mobile-alt"></i> 13256930280</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label"><i class="fas fa-envelope"></i> 电子邮箱</div>
+                        <div class="info-value"><i class="fas fa-at"></i> 2825139009@qq.com</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label"><i class="fas fa-graduation-cap"></i> 学历</div>
+                        <div class="info-value">本科</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label"><i class="fas fa-heartbeat"></i> 健康状况</div>
+                        <div class="info-value"><i class="fas fa-check-circle"></i> 正常</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label"><i class="fas fa-heart"></i> 婚姻状况</div>
+                        <div class="info-value"><i class="fas fa-times-circle"></i> 未婚</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 求职意向 -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-bullseye"></i> 求职意向</div>
+                <div class="section-content">
+                    <div class="two-column">
+                        <div class="column">
+                            <div class="info-row">
+                                <div class="info-label"><i class="fas fa-briefcase"></i> 求职意向</div>
+                                <div class="info-value"><i class="fas fa-question-circle"></i> 无</div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="info-row">
+                                <div class="info-label"><i class="fas fa-laptop-code"></i> 专业</div>
+                                <div class="info-value"><i class="fas fa-code"></i> 软件工程</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-label"><i class="fas fa-university"></i> 毕业院校</div>
+                        <div class="info-value"><i class="fas fa-school"></i> 烟台理工学院</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 技能证书 -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-certificate"></i> 技能证书</div>
+                <div class="section-content">
+                    <div class="list-item"><i class="fas fa-award"></i> 高级软件工程师</div>
+                    <div class="list-item"><i class="fas fa-certificate"></i> 计算机办公应用助理工程师</div>
+                </div>
+            </div>
+
+            <!-- 个人特长与爱好 -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-star"></i> 个人特长与爱好</div>
+                <div class="section-content">
+                    <div class="list-item"><i class="fas fa-music"></i> 听音乐</div>
+                    <div class="list-item"><i class="fas fa-gamepad"></i> 打台球</div>
+                    <div class="list-item"><i class="fas fa-headphones"></i> 电子游戏</div>
+                </div>
+            </div>
+
+            <!-- 项目经历 -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-project-diagram"></i> 项目经历</div>
+                <div class="section-content">
+                    <div class="info-value"><i class="fas fa-ban"></i> 无</div>
+                </div>
+            </div>
+
+            <!-- 自我评价 -->
+            <div class="section">
+                <div class="section-title"><i class="fas fa-comment-dots"></i> 自我评价</div>
+                <div class="section-content">
+                    <p><i class="fas fa-quote-left"></i> 本人性格开朗、稳重、有活力，待人热情、真诚。工作认真负责，积极主动，能吃苦耐劳；喜欢思考，虚心与人交流，以取长补短。有较强的组织能力、实际动手能力和团体协作精神，能迅速的适应各种环境，并融合其中。在校期间学习认真，积极配合老师完成工作任务，并多次组织参加社会实践活动，在自己能力和素质上都有了进一步的提高，相信自己能够适应这个社会，为我们的社会多做贡献。</p>
+                    <br>
+                    <p>作为软件工程专业的学生，我掌握了扎实的编程基础，熟悉多种开发语言和工具。对新技术保持高度敏感，具备快速学习能力。在烟台理工学院的学习过程中，我培养了良好的逻辑思维能力和解决问题的能力。虽然目前求职意向尚未明确，但我对软件开发、测试、运维等多个方向都保持开放态度，愿意从基础岗位做起，在实践中不断提升自己。</p>
+                    <br>
+                    <p>我对工作持积极认真的态度，责任心强，为人诚恳、细心、乐观、稳重，有良好的团队精神，能快速适应工作环境，并能在实际工作中不断学习，不断完善自己，做好本职工作。我是一个积极、乐观，务实，不断学习，奋力进取的人。不想落后，也不愿落后；落后，失去成功的一切机会。学习也是必不可少的，没有知识是很难成功的；同时，为自己争取更多的机会去实践，去成功！ <i class="fas fa-quote-right"></i></p>
+                </div>
+            </div>
+            
+            <!-- 下载按钮 -->
+            <a href="#" class="download-btn"><i class="fas fa-download"></i> 下载完整简历</a>
+            
+            <!-- 社交链接 -->
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-qq"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
